@@ -8,18 +8,22 @@
   <body>
     <div class="counter">
       <h1>Cart Counter</h1>
+      <h2>(Limit of 10)</h2>
       <div class="counter__buttons">
         <button
           onclick="
-          console.log(`Cart Quantity: ${count}`);"
+          alert(`Cart Quantity: ${count}`);"
           class="button primary-button"
         >
           Show Total
         </button>
         <button
           onclick="
-          count ++;
-          console.log('Added to Cart!');
+          if (count + 1 > cartLimit) alert(cartFullMessage);
+          else{
+            count ++;
+            console.log('Added to Cart!');
+          }
         "
           class="button secondary-button"
         >
@@ -27,16 +31,24 @@
         </button>
         <button
           onclick="
-          count += 2;
-          console.log('Added 2 to Cart!');"
+          if (count + 2 > cartLimit) alert(cartFullMessage);
+          else 
+          {
+            count += 2;
+            console.log('Added 2 to Cart!');
+          }
+          "
           class="button secondary-button"
         >
           +2
         </button>
         <button
           onclick="
-          count += 3;
-          console.log('Added 3 to Cart!');
+          if (count + 3 > cartLimit) alert(cartFullMessage);
+          else{
+            count += 3;
+            console.log('Added 3 to Cart!');
+          }
         "
           class="button secondary-button"
         >
@@ -45,7 +57,7 @@
         <button
           onclick="
           count = 0;
-          console.log('Cart has been Reset!');
+          alert('Cart has been Reset!');
         "
           class="button primary-button"
         >
@@ -55,6 +67,8 @@
     </div>
     <script>
       let count = 0;
+      const cartLimit = 10;
+      const cartFullMessage = "The cart is full!";
     </script>
   </body>
 </html>
