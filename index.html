@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Cart Counter Exercise</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="counter">
+      <h1>Cart Counter</h1>
+      <div class="counter__buttons">
+        <button
+          onclick="
+          console.log(`Cart Quantity: ${count}`);"
+          class="button primary-button"
+        >
+          Show Total
+        </button>
+        <button
+          onclick="
+          count ++;
+          console.log('Added to Cart!');
+        "
+          class="button secondary-button"
+        >
+          Add to Cart
+        </button>
+        <button
+          onclick="
+          count += 2;
+          console.log('Added 2 to Cart!');"
+          class="button secondary-button"
+        >
+          +2
+        </button>
+        <button
+          onclick="
+          count += 3;
+          console.log('Added 3 to Cart!');
+        "
+          class="button secondary-button"
+        >
+          +3
+        </button>
+        <button
+          onclick="
+          count = 0;
+          console.log('Cart has been Reset!');
+        "
+          class="button primary-button"
+        >
+          Reset Cart
+        </button>
+      </div>
+    </div>
+    <script>
+      let count = 0;
+    </script>
+  </body>
+</html>
