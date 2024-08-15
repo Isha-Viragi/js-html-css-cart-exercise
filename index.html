@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="styles.css" type="text/css" />
   </head>
   <body>
-    <div class="counter">
+    <main class="counter">
       <h1>Cart Counter</h1>
       <h2>(Limit of 10)</h2>
-      <div class="counter__buttons">
+
+      <div class="counter__grid-main">
         <button
           onclick="
           alert(`Cart Quantity: ${count}`);"
@@ -17,20 +18,22 @@
         >
           Show Total
         </button>
-        <button
-          onclick="
+
+        <div class="counter__grid-buttons">
+          <button
+            onclick="
           if (count + 1 > cartLimit) alert(cartFullMessage);
           else{
             count ++;
             console.log('Added to Cart!');
           }
         "
-          class="button secondary-button"
-        >
-          Add to Cart
-        </button>
-        <button
-          onclick="
+            class="button secondary-button"
+          >
+            Add to Cart
+          </button>
+          <button
+            onclick="
           if (count + 2 > cartLimit) alert(cartFullMessage);
           else 
           {
@@ -38,37 +41,78 @@
             console.log('Added 2 to Cart!');
           }
           "
-          class="button secondary-button"
-        >
-          +2
-        </button>
-        <button
-          onclick="
+            class="button secondary-button"
+          >
+            +2
+          </button>
+          <button
+            onclick="
           if (count + 3 > cartLimit) alert(cartFullMessage);
           else{
             count += 3;
             console.log('Added 3 to Cart!');
           }
         "
-          class="button secondary-button"
-        >
-          +3
-        </button>
+            class="button secondary-button"
+          >
+            +3
+          </button>
+
+          <button
+            onclick="
+          if (count - 1 < 0) alert(cartEmptyMessage);
+          else{
+            count --;
+            console.log('Removed from Cart!');
+          }
+        "
+            class="button secondary-button"
+          >
+            Remove from Cart
+          </button>
+          <button
+            onclick="
+          if (count - 2 < 0) alert(cartEmptyMessage);
+          else 
+          {
+            count -= 2;
+            console.log('Removed 2 from Cart!');
+          }
+          "
+            class="button secondary-button"
+          >
+            -2
+          </button>
+          <button
+            onclick="
+          if (count - 3 < 0) alert(cartEmptyMessage);
+          else{
+            count -= 3;
+            console.log('Removed 3 from Cart!');
+          }
+        "
+            class="button secondary-button"
+          >
+            -3
+          </button>
+        </div>
+
         <button
           onclick="
-          count = 0;
-          alert('Cart has been Reset!');
-        "
+                  count = 0;
+                  alert('Cart has been Reset!');
+                "
           class="button primary-button"
         >
           Reset Cart
         </button>
       </div>
-    </div>
+    </main>
     <script>
       let count = 0;
       const cartLimit = 10;
       const cartFullMessage = "The cart is full!";
+      const cartEmptyMessage = "Not enough items in the cart!!";
     </script>
   </body>
 </html>
