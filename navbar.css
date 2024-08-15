@@ -13,6 +13,21 @@
   height: 70px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+
+  padding-left: 50px;
+  padding-right: 50px
+}
+
+.left-section{
+  
+}
+ 
+.middle-section{
+
+}
+
+.right-section{
+  
 }
