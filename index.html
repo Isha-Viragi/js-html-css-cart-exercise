@@ -59,6 +59,32 @@
           </button>
 
           <button
+            class="button secondary-button"
+            onclick="
+            if (count + 4 > cartLimit) alert(cartFullMessage);
+            else{
+              count += 4;
+              console.log('Added 4 to cart!');
+            }
+          "
+          >
+            +4
+          </button>
+
+          <button
+            class="button secondary-button"
+            onclick="
+            if (count + 5 > cartLimit) alert(cartFullMessage);
+            else{
+              count += 5;
+              console.log('Added 5 to cart!');
+            }
+          "
+          >
+            +5
+          </button>
+
+          <button
             onclick="
           if (count - 1 < 0) alert(cartEmptyMessage);
           else{
@@ -94,6 +120,30 @@
             class="button secondary-button"
           >
             -3
+          </button>
+          <button
+            class="button secondary-button"
+            onclick="
+          if (count - 4 < 0) alert(cartEmptyMessage);
+          else{
+            count -= 4;
+            console.log('Removed 4 from cart!')
+          }
+          "
+          >
+            -4
+          </button>
+          <button
+            class="button secondary-button"
+            onclick="
+          if (count - 5 < 0) alert(cartEmptyMessage);
+          else{
+            count -= 5;
+            console.log('Removed 5 from cart!')
+          }
+          "
+          >
+            -5
           </button>
         </div>
 
