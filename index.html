@@ -21,38 +21,19 @@
 
         <div class="counter__grid-buttons">
           <button
-            onclick="
-          if (count + 1 > cartLimit) alert(cartFullMessage);
-          else{
-            count ++;
-            console.log('Added to Cart!');
-          }
-        "
+            onclick="updateCartQuantity(1, '+')"
             class="button secondary-button"
           >
             Add to Cart
           </button>
           <button
-            onclick="
-          if (count + 2 > cartLimit) alert(cartFullMessage);
-          else 
-          {
-            count += 2;
-            console.log('Added 2 to Cart!');
-          }
-          "
+            onclick="updateCartQuantity(2, '+')"
             class="button secondary-button"
           >
             +2
           </button>
           <button
-            onclick="
-          if (count + 3 > cartLimit) alert(cartFullMessage);
-          else{
-            count += 3;
-            console.log('Added 3 to Cart!');
-          }
-        "
+            onclick="updateCartQuantity(3, '+')"
             class="button secondary-button"
           >
             +3
@@ -60,88 +41,45 @@
 
           <button
             class="button secondary-button"
-            onclick="
-            if (count + 4 > cartLimit) alert(cartFullMessage);
-            else{
-              count += 4;
-              console.log('Added 4 to cart!');
-            }
-          "
+            onclick="updateCartQuantity(4, '+')"
           >
             +4
           </button>
 
           <button
             class="button secondary-button"
-            onclick="
-            if (count + 5 > cartLimit) alert(cartFullMessage);
-            else{
-              count += 5;
-              console.log('Added 5 to cart!');
-            }
-          "
+            onclick="updateCartQuantity(5, '+')"
           >
             +5
           </button>
 
           <button
-            onclick="
-          if (count - 1 < 0) alert(cartEmptyMessage);
-          else{
-            count --;
-            console.log('Removed from Cart!');
-          }
-        "
+            onclick="updateCartQuantity(1, '-')"
             class="button secondary-button"
           >
             Remove from Cart
           </button>
           <button
-            onclick="
-          if (count - 2 < 0) alert(cartEmptyMessage);
-          else 
-          {
-            count -= 2;
-            console.log('Removed 2 from Cart!');
-          }
-          "
+            onclick="updateCartQuantity(2, '-')"
             class="button secondary-button"
           >
             -2
           </button>
           <button
-            onclick="
-          if (count - 3 < 0) alert(cartEmptyMessage);
-          else{
-            count -= 3;
-            console.log('Removed 3 from Cart!');
-          }
-        "
+            onclick="updateCartQuantity(3, '-')"
             class="button secondary-button"
           >
             -3
           </button>
           <button
             class="button secondary-button"
-            onclick="
-          if (count - 4 < 0) alert(cartEmptyMessage);
-          else{
-            count -= 4;
-            console.log('Removed 4 from cart!')
-          }
-          "
+            onclick="updateCartQuantity(4, '-')"
           >
             -4
           </button>
           <button
             class="button secondary-button"
-            onclick="
-          if (count - 5 < 0) alert(cartEmptyMessage);
-          else{
-            count -= 5;
-            console.log('Removed 5 from cart!')
-          }
-          "
+            onclick="updateCartQuantity(5, '-')"
           >
             -5
           </button>
@@ -163,6 +101,22 @@
       const cartLimit = 10;
       const cartFullMessage = "The cart is full!";
       const cartEmptyMessage = "Not enough items in the cart!!";
+
+      function updateCartQuantity(quantity, action) {
+        if (action === "+") {
+          if (count + quantity > cartLimit) alert(cartFullMessage);
+          else {
+            count += quantity;
+            console.log(`Added ${quantity} to cart!`);
+          }
+        } else if (action === "-") {
+          if (count - quantity < 0) alert(cartEmptyMessage);
+          else {
+            count -= quantity;
+            console.log(`Removed ${quantity} from cart!`);
+          }
+        }
+      }
     </script>
   </body>
 </html>
