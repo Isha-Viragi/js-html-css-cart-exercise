@@ -16,15 +16,14 @@
 
     <main class="counter">
       <h1>Cart Counter</h1>
-      <h2>(Limit of 10)</h2>
+      <p>(Limit of 10)</p>
 
       <div class="counter__grid-main">
         <button
-          onclick="
-          alert(`Cart Quantity: ${count}`);"
-          class="button primary-button"
+          onclick="changeButton();"
+          class="button primary-button js-total-button"
         >
-          Show Total
+          Click to Hide Total
         </button>
 
         <div class="counter__grid-buttons">
@@ -96,6 +95,7 @@
         <button
           onclick="
                   count = 0;
+                  displayCount();
                   alert('Cart has been Reset!');
                 "
           class="button primary-button"
@@ -103,6 +103,7 @@
           Reset Cart
         </button>
       </div>
+      <p class="js-count-display"></p>
     </main>
     <footer class="footer">FOOTER</footer>
     <script>
@@ -111,19 +112,48 @@
       const cartFullMessage = "The cart is full!";
       const cartEmptyMessage = "Not enough items in the cart!!";
 
+      displayCount();
+
       function updateCartQuantity(quantity, action) {
         if (action === "+") {
           if (count + quantity > cartLimit) alert(cartFullMessage);
           else {
             count += quantity;
             console.log(`Added ${quantity} to cart!`);
+            displayCount();
           }
         } else if (action === "-") {
           if (count - quantity < 0) alert(cartEmptyMessage);
           else {
             count -= quantity;
             console.log(`Removed ${quantity} from cart!`);
+            displayCount();
           }
+        }
+      }
+
+      function displayCount() {
+        const buttonElement = document.querySelector(".js-total-button");
+        if (buttonElement.innerText === "Click to Show Total") {
+          return;
+        }
+        document.querySelector(
+          ".js-count-display"
+        ).innerHTML = `Cart Quantity: ${count}`;
+      }
+
+      function hideCount() {
+        document.querySelector(".js-count-display").innerHTML = "";
+      }
+
+      function changeButton() {
+        const buttonElement = document.querySelector(".js-total-button");
+        if (buttonElement.innerText === "Click to Hide Total") {
+          buttonElement.innerHTML = "Click to Show Total";
+          hideCount();
+        } else if (buttonElement.innerText === "Click to Show Total") {
+          buttonElement.innerHTML = "Click to Hide Total";
+          displayCount();
         }
       }
     </script>
