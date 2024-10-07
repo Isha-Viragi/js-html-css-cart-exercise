@@ -1,11 +1,12 @@
 *{
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
-
+  color: white;
 }
 
 body{
   padding: 125px 50px;
+  background-color: rgb(61, 61, 61);
 }
 
 p {
