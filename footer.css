@@ -9,6 +9,18 @@
   height: 60px;
 
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+
+}
+
+
+.author-name{
+  margin-right: 40px;
+  margin-left: 10px;
+}
+
+.socials-icon{
+  height: 30px;
+  margin-right: 12px;
 }
