@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 74px;
   
   display: flex;
   justify-content: space-between;
@@ -23,6 +23,11 @@
 .right-section{
   font-size: 18px;
   width: 180px;
+}
+.left-section{
+  display: flex;
+  align-items: center;
+
 }
 .icons{
   display: inline;
@@ -63,4 +68,15 @@
 
 .count-hidden-off{
   display: none;
+}
+
+.logo{
+  width: 60px;
+  padding: 22px 0px;
+}
+.company-name{
+  font-weight: bold;
+  margin-left: 8px;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
