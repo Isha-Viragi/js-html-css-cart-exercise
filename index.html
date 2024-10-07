@@ -10,8 +10,15 @@
   <body>
     <header class="navbar">
       <nav class="left-section">LOGO</nav>
-      <nav class="middle-section">SEARCHBAR</nav>
-      <nav class="right-section">LINKS</nav>
+      <nav class="right-section">
+        <span class="count-text">Cart Count:</span>
+        <div class="icons">
+          <span class="js-count-display count-display"></span>
+          <span class="js-count-hidden count-hidden">
+            <img src="images/lock.svg" class="lock-icon" />
+          </span>
+        </div>
+      </nav>
     </header>
 
     <main class="counter">
@@ -103,7 +110,6 @@
           Reset Cart
         </button>
       </div>
-      <p class="js-count-display"></p>
     </main>
     <footer class="footer">FOOTER</footer>
     <script>
@@ -134,16 +140,24 @@
 
       function displayCount() {
         const buttonElement = document.querySelector(".js-total-button");
+        const displayElement = document.querySelector(".js-count-display");
+        const hiddenElement = document.querySelector(".js-count-hidden");
+
         if (buttonElement.innerText === "Click to Show Total") {
           return;
         }
-        document.querySelector(
-          ".js-count-display"
-        ).innerHTML = `Cart Quantity: ${count}`;
+        displayElement.innerHTML = count;
+        displayElement.classList.remove("count-display-off");
+        hiddenElement.classList.add("count-hidden-off");
       }
 
       function hideCount() {
-        document.querySelector(".js-count-display").innerHTML = "";
+        const displayElement = document.querySelector(".js-count-display");
+        const hiddenElement = document.querySelector(".js-count-hidden");
+
+        displayElement.innerHTML = "";
+        displayElement.classList.add("count-display-off");
+        hiddenElement.classList.remove("count-hidden-off");
       }
 
       function changeButton() {
