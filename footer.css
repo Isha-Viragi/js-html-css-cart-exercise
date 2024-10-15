@@ -18,11 +18,11 @@
   margin-left: 10px;
 }
 
+.socials-container{
+  display: flex;
+  gap: 14px;
+  margin-right: 26px;
+}
 .socials-icon{
   height: 30px;
-  margin-right: 14px;
-}
-.last-icon{
-  margin-right: 40px;
-  margin-right: 12px;
 }
