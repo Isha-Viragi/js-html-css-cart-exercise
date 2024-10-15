@@ -7,6 +7,9 @@
 body{
   padding: 125px 50px;
   background-color: rgb(61, 61, 61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 p {
@@ -14,6 +17,7 @@ p {
 }
 
 .counter{
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,12 +62,15 @@ p {
 
 .primary-button{
   background-color: rgb(236, 121, 33);
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 .secondary-button{
   background-color: rgb(216, 183, 51);
-  border-radius: 5px;
+  border-radius: 10px;
   min-height: 90px;
 }
 
+.button-toggle-off {
+  background-color:rgb(103, 103, 103);
+}

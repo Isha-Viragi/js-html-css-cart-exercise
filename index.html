@@ -191,9 +191,11 @@
         const buttonElement = document.querySelector(".js-total-button");
         if (buttonElement.innerText === "Click to Hide Total") {
           buttonElement.innerHTML = "Click to Show Total";
+          buttonElement.classList.add("button-toggle-off");
           hideCount();
         } else if (buttonElement.innerText === "Click to Show Total") {
           buttonElement.innerHTML = "Click to Hide Total";
+          buttonElement.classList.remove("button-toggle-off");
           displayCount();
         }
       }
