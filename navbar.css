@@ -23,14 +23,13 @@
 .right-section{
   font-size: 18px;
   width: 180px;
+  display: flex;
+  align-items: center;
 }
 .left-section{
   display: flex;
   align-items: center;
 
-}
-.icons{
-  display: inline;
 }
 .count-text{
   margin-right: 10px;
@@ -50,11 +49,6 @@
 }
 .count-hidden{
   background-color: rgb(216, 216, 216);
-}
-.icon-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .lock-icon{
   width: 28px;
